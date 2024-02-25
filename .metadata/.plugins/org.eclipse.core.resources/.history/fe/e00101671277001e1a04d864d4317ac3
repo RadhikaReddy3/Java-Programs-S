@@ -1,0 +1,42 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class PTest {
+
+	public static void main(String[] args) {
+		 
+		 
+		Mobile m = new Mobile(1,"jio",243535556L);
+		Mobile m1 = new Mobile(2,"airtel",54953028425L);
+		Mobile[] z = {m,m1};
+        AADHAR a = new AADHAR(1,79220424923L,"Hyd");
+    	Person p = new Person(1,"Radhika",64632.23,a,z);
+        
+        /*If you want to initialize with setter methods*/
+    	Person q = new Person();
+    	q.setPid(1);
+    	q.setPname("Ram");
+    	q.setPsal(56.56);
+    	
+    	
+		
+		
+		System.out.println("Person ID: "+p.getPid());
+		System.out.println("Person Name: "+p.getPname());
+		System.out.println("Person Salary: "+p.getPsal()+"\n\n");
+		
+		System.out.println("AADHAR ID: "+a.getAid());
+		System.out.println("AADHAR No: "+a.getAno());
+		System.out.println("AADHAR Location: "+a.getAloc()+"\n\n");
+        
+		Mobile[] c= p.getMob();
+		System.out.println(c);
+		for(int i=0;i<z.length;i++) {
+			System.out.println("Mobile ID: "+c[i].getMid());
+			System.out.println("Mobile Sim: "+c[i].getMsim());
+			System.out.println("Mobile Number: "+c[i].getMno()+"\n");
+			System.out.println("-----Next Mobile Details-----"+"\n");
+		}
+        
+	}
+
+}

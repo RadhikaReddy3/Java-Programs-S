@@ -1,0 +1,18 @@
+package com.cisco;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+ 
+
+public class Test {
+
+	public static void main(String[] args) {
+		 
+		ApplicationContext c = new AnnotationConfigApplicationContext(OurConfiguration.class);
+		 StudentController std =c.getBean(StudentController.class);
+		 std.savedata(new StudentPojo(1,"siva",79.5,16));
+
+	}
+
+}

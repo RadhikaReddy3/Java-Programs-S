@@ -1,0 +1,10 @@
+package com.slokam;
+
+public class Restuarant {
+
+	public static void main(String[] args) {
+		 System.out.println("What type of food you preferred: ");
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;getCon.java&apos; to &apos;HibernateRelations/src/com.controller&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate&apos;&#x0D;&#x0A;- Destination element: &apos;HibernateRelations/src/com.controller&apos;&#x0D;&#x0A;- Original element: &apos;controller.getCon.java&apos;" description="Copy compilation unit" destination="=HibernateRelations/src&lt;com.controller" element1="/src&lt;controller{getCon.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1704697975802" units="1" version="1.0"/>
+</session>

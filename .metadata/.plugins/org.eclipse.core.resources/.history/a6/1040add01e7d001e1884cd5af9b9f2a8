@@ -1,0 +1,15 @@
+package NonPrimitiveDatatypes;
+
+public class Dept {
+	 
+     public Employee emp() {
+    	 Employee e = new Employee();
+    	 return e;
+     }
+
+	public static void main(String[] args) {
+		 
+         
+	}
+
+}

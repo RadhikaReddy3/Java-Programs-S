@@ -1,0 +1,14 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class PTest {
+
+	public static void main(String[] args) {
+		 
+		Person p = new Person(1,"Radhika",64632.23);
+		System.out.println(p.getPid());
+		System.out.println(p.getPname());
+		System.out.println(p.getPsal());
+
+	}
+
+}

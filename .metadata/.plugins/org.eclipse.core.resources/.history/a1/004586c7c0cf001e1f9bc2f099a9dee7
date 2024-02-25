@@ -1,0 +1,13 @@
+package com.pojo;
+
+import org.springframework.stereotype.Component;
+
+public class Developer {
+
+  public void doWork() {
+		
+		System.out.println("Developer Work started");
+		System.out.println("Developer Work completed");
+		
+	}
+}

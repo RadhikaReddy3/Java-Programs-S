@@ -1,0 +1,42 @@
+package Hierarchical_Inheritance;
+//import java.util.Scanner;
+public class Test {
+
+	public static void main(String[] args) {
+		//Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		System.out.println("---------------Clerk Login-------------"+"\n"); 
+		Clerk c = new Clerk();
+		  
+		boolean flag = c.submit("ccc","ccc");
+		if(flag) {
+			c.responsibility();
+		}
+		else {
+			System.out.println("Invalid Credientals"+"\n");
+		}
+
+		System.out.println("---------------Manager Login-------------"+"\n");
+		Manager c1 = new Manager();
+		boolean a = c1.submit("ccc","ccc");
+		if(a) {
+			c1.responsibility();
+		}
+		else {
+			System.out.println("Invalid Credientals");
+		}
+		
+		
+		System.out.println("---------------Customer Login-------------"+"\n");
+		Customer c2 = new Customer();
+		boolean b = c1.submit("ccc","ccc");
+		if(b) {
+			c2.responsibility();
+		}
+		else {
+			System.out.println("Invalid Credientals");
+		}
+		sc.close();
+	}
+
+}

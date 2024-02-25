@@ -1,0 +1,24 @@
+package NonPrimitiveDatatypes;
+
+public class Child extends Parent {
+	//public Dept m1()
+	public Employee m1() {
+		System.out.println("Hi m1 from Parent");
+		
+		Employee e1 = new Employee();
+		e1.setEid(2);
+		e1.setEname("ram");
+		e1.setEsal("78232.23");
+		e1.setDid(101);
+		e1.setDname("IT");
+		e1.setDloc("Hyd");
+		
+		return e1;
+		}
+
+	public static void main(String[] args) {
+		 
+
+	}
+
+}

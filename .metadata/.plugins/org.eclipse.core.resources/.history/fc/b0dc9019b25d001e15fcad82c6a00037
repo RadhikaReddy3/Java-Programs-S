@@ -1,0 +1,26 @@
+package com.slokam;
+
+public class elsenestedif {
+
+	public static void main(String[] args) {
+		 String ffname = "lucky";
+		 String sname = "GEMS";
+		 String uname = "slokam";
+		 String pwd = "s1234";
+		 
+		 if(uname.equals("slokam")&&pwd.equals("s12345")) {
+			 System.out.println("Login success");
+		 }
+		 else {
+			     System.out.println("Incorrect uname and pwd please try with ffname & sname");
+			     System.out.println("Please enter ffname & sname");
+			    if(ffname.equals("lucky")&&sname.equals("GEMS")) {
+			    	System.out.println("uname"+uname+"\n"+"pwd"+pwd);
+			    }
+			 
+			 
+		 }
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.cisco;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentController {
+	
+	private StudentDao sd;
+	
+	public static void savedata(StudentPojo std) {
+		System.out.println("Started the savemethod");
+		
+		System.out.println("Completed the savedata");
+	}
+
+}

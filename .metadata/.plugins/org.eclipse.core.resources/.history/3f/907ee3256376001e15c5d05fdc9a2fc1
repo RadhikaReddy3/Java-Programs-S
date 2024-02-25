@@ -1,0 +1,14 @@
+package com.cisco;
+
+public class One {
+	public One() {
+		System.out.println("Default Constructor");
+	}
+
+	public static void main(String[] args) {
+		 One k = new One();
+
+	}
+
+}
+

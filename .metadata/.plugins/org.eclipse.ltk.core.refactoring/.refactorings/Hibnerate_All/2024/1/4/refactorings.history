@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;GetSessionFactory.java&apos; to &apos;EmpHib/src/com.controller&apos;&#x0D;&#x0A;- Original project: &apos;Hibnerate_All&apos;&#x0D;&#x0A;- Destination element: &apos;EmpHib/src/com.controller&apos;&#x0D;&#x0A;- Original element: &apos;com.controller.GetSessionFactory.java&apos;" description="Copy compilation unit" destination="=EmpHib/src&lt;com.controller" element1="/src&lt;com.controller{GetSessionFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1706264055691" units="1" version="1.0"/>
+</session>

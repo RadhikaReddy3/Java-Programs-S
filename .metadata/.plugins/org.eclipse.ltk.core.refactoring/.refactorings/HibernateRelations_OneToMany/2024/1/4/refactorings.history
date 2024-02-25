@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Mobile.java&apos; to &apos;HibernateRelations OTO,OTM,MTM/src/com.pojo&apos;&#x0D;&#x0A;- Original project: &apos;HibernateRelations_OneToMany&apos;&#x0D;&#x0A;- Destination element: &apos;HibernateRelations OTO,OTM,MTM/src/com.pojo&apos;&#x0D;&#x0A;- Original element: &apos;Pojo.Mobile.java&apos;" description="Copy compilation unit" destination="=HibernateRelations OTO,OTM,MTM/src&lt;com.pojo" element1="/src&lt;Pojo{Mobile.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1706018517272" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,54 @@
+package com.controller;
+import com.pojo.Patient;
+import com.pojo.Adhar;
+import com.pojo.ContactDetails;
+import com.pojo.Doctor;
+import com.pojo.FoodandBev;
+import com.pojo.Lab;
+public class SetterInjection {
+
+	public static void main(String[] args) {
+		 Patient p = new Patient();
+		 p.setPid(1);
+		 p.setPname("siva");
+		 p.setPage(23);
+		 
+		 Adhar a = new Adhar();
+		 a.setAid(1);
+		 a.setAnum("234asd");
+		 a.setAloc("scd");
+		 p.setAd(a);
+		 
+		 ContactDetails c = new ContactDetails();
+		 c.setCdid(1);
+		 c.setCname("Lokesh");
+		 c.setCphone(56456);
+		 
+		 ContactDetails c1 = new ContactDetails();
+		 c.setCdid(2);
+		 c.setCname("Rajesh");
+		 c.setCphone(76786);
+		 
+		 ContactDetails[] co= {c,c1};
+		 p.setCd(co);
+		 
+		 Doctor d = new Doctor();
+		 d.setDid(1);
+		 d.setDname("rose");
+		 d.setDfee(3000);
+		 
+		 Doctor d1 = new Doctor();
+		 d.setDid(2);
+		 d.setDname("sravani");
+		 d.setDfee(2000);
+		 
+		 Doctor d2 = new Doctor();
+		 d.setDid(3);
+		 d.setDname("sampath");
+		 d.setDfee(5000);
+		 
+		 Doctor doc[] = {d,d1,d2};
+
+	}
+
+}

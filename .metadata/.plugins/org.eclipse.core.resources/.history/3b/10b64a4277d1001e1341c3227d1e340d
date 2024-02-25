@@ -1,0 +1,187 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+
+	@Autowired
+	 private DataSource dso;
+	
+	public void save(Student se) {
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		Connection con= null;
+		PreparedStatement ps = null;
+		try {
+			con=dso.getConnection();
+			System.out.println(con);
+			ps =con.prepareStatement("insert into springjdbcstd.student values(?,?,?,?)");
+			ps.setInt(1, se.getSid());
+			ps.setString(2, se.getSname());
+			ps.setDouble(3, se.getSmarks());
+			ps.setInt(4, se.getSage());
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Inserted:"+row);
+			
+		 
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		 
+		
+		finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.println("We are in Controller save completed");
+		
+	}
+	
+	
+	
+	
+	public void update(int sid, int sage, double smarks) {
+		System.out.println("We are in Controller update started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			con=dso.getConnection();
+			System.out.println(con);
+			ps =con.prepareStatement(" Update springjdbcstd.student set sage =?,smarks =? where sid = ?"); 
+			ps.setInt(1,sage);
+			ps.setDouble(2,smarks);
+			ps.setInt(3, sid); 
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Updated:"+row);
+			
+		 
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+		}
+		System.out.println("We are in Controller save completed");
+	}
+
+	public void delete(int sid) {
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		try {
+			Connection con=dso.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement(" Delete from springjdbcstd.student where sid = ?");
+			 
+			 
+			ps.setInt(1, sid); 
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows deleted:"+row);
+			
+		 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We are in Controller save completed");
+	}
+
+	public Student GetById(int sid) {
+		Student sd = new Student();
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		try {
+			Connection con=dso.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement(" Select* from springjdbcstd.student where sid = ?");
+			 
+			 
+			ps.setInt(1, sid); 
+			
+			
+		 ResultSet rs =ps.executeQuery();
+		 //System.out.println("Rows deleted:"+rs);
+		 
+		  
+		 while(rs.next()) {
+			 
+			
+			 sd.setSid(rs.getInt("sid"));
+			 sd.setSname(rs.getString("sname"));
+			 sd.setSmarks(rs.getDouble("smarks"));
+			 sd.setSage(rs.getInt("sage"));
+			 System.out.println(sd);
+			 
+		
+		}
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		return sd;
+		
+	 }
+		public void  GetAll() {
+			System.out.println("We are in Controller save started");
+			System.out.println("Database code starts here");
+			System.out.println(dso);
+			
+			 
+			try {
+				Connection con=dso.getConnection();
+				System.out.println(con);
+				PreparedStatement ps =con.prepareStatement(" Select* from springjdbc1.stdentity ");
+				 	
+				
+			 ResultSet rs =ps.executeQuery();
+			System.out.println("Rows deleted:"+rs);
+			while(rs.next()) {
+				 
+				 
+				 System.out.println(rs.getInt("sid"));
+				  System.out.println(rs.getString("sname"));
+			     System.out.println(rs.getDouble("smarks"));
+				 System.out.println(rs.getLong("sphone"));
+				 System.out.println("----NEXT STUDENT DETAILS----");
+			}
+				
+		 
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		System.out.println("We are in Controller save completed");
+	      
+	}
+		
+		
+}

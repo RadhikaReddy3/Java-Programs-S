@@ -1,0 +1,10 @@
+package Different_Methods_Usage;
+
+public class ETest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

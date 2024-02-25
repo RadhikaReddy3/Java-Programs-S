@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TeamLead.java&apos; to &apos;Has-A-Relation Composition/src/com.pojo&apos;&#x0D;&#x0A;- Original project: &apos;Spring_Introduction&apos;&#x0D;&#x0A;- Destination element: &apos;Has-A-Relation Composition/src/com.pojo&apos;&#x0D;&#x0A;- Original element: &apos;com.pojo.TeamLead.java&apos;" description="Copy compilation unit" destination="=Has-A-Relation Composition/src&lt;com.pojo" element1="/src&lt;com.pojo{TeamLead.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1707807394635" units="1" version="1.0"/>
+</session>

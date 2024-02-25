@@ -1,0 +1,20 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class PTest {
+
+	public static void main(String[] args) {
+		 
+		Person p = new Person(1,"Radhika",64632.23);
+		System.out.println("Person ID: "+p.getPid());
+		System.out.println("Person Name: "+p.getPname());
+		System.out.println("Person Salary: "+p.getPsal()+"\n\n");
+		
+        AADHAR a = new AADHAR(1,79220424923L,"Hyd");
+        System.out.println("AADHAR ID: "+a.getAid());
+		System.out.println("AADHAR No: "+a.getAno());
+		System.out.println("AADHAR Location: "+a.getAloc()+"\n\n");
+        
+        
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.cisco;
+
+public class Test {
+
+	public static void main(String[] args) {
+		 
+	             STon s1=STon.getsingletonobject();
+	             STon s2=STon.getsingletonobject();
+	             STon s3=STon.getsingletonobject();
+	             
+	             System.out.println(s1);
+	             System.out.println(s2);
+	             System.out.println(s3);
+
+	}
+
+}

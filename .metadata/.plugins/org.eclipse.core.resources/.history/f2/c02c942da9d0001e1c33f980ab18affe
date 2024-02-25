@@ -1,0 +1,16 @@
+package com.cisco;
+
+//It is Example for Hibnerate SessionFactory--heavy Object
+public class STon {
+	
+	private static STonEagerLoad st = new STonEagerLoad();
+	
+	private STon() {
+		
+	}
+	
+	public static STonEagerLoad getsingletonobject() {
+		return st;
+	}
+
+}

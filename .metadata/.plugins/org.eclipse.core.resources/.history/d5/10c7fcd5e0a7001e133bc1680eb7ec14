@@ -1,0 +1,77 @@
+package FileTODB30_12_2023_Aggregate_Functions;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class TestAgg{
+
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/relate", "root", "root");
+
+            countRecords(con);
+            sumOfSalary(con);
+            averageSalary(con);
+            minSalary(con);
+            maxSalary(con);
+
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void countRecords(Connection con) throws Exception {
+        PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM relate.employee");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            int count = rs.getInt(1);
+            System.out.println("Count of records in employee table: " + count);
+        }
+    }
+
+    private static void sumOfSalary(Connection con) throws Exception {
+        PreparedStatement ps = con.prepareStatement("SELECT SUM(esal) FROM relate.employee");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            double sum = rs.getDouble(1);
+            System.out.println("Sum of salary in employee table: " + sum);
+        }
+    }
+
+    private static void averageSalary(Connection con) throws Exception {
+        PreparedStatement ps = con.prepareStatement("SELECT AVG(esal) FROM relate.employee");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            double avg = rs.getDouble(1);
+            System.out.println("Average salary in employee table: " + avg);
+        }
+    }
+
+    private static void minSalary(Connection con) throws Exception {
+        PreparedStatement ps = con.prepareStatement("SELECT MIN(esal) FROM relate.employee");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next())
+        {
+        	
+            double min = rs.getDouble(1);
+            System.out.println("Minimum salary in employee table: " + min);
+            
+        }
+    }
+
+    private static void maxSalary(Connection con) throws Exception {
+        PreparedStatement ps = con.prepareStatement("SELECT MAX(esal) FROM relate.employee");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) 
+        {
+        	
+            double max = rs.getDouble(1);
+            System.out.println("Maximum salary in employee table: " + max);
+            
+        }
+    }
+}

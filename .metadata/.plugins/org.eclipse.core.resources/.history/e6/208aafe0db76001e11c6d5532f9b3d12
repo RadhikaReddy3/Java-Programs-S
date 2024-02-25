@@ -1,0 +1,36 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class Person {
+	
+	public Person(int pid, String pname, double psal){
+		
+		System.out.println("Three Argumented Constructor");
+		this.pid =pid;
+		this.pname =pname;
+		this.psal=psal;
+	}
+
+	private int pid;
+	private String pname;
+	private double psal;
+	private AADHAR ad;
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	public double getPsal() {
+		return psal;
+	}
+	public void setPsal(double psal) {
+		this.psal = psal;
+	}
+ 
+}

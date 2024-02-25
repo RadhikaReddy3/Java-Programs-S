@@ -1,0 +1,8 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class AADHAR {
+	private int aid;
+	private int ano;
+	private int aloc;
+
+}

@@ -1,0 +1,9 @@
+package com.lazy;
+
+public class STonl {
+	
+	private STonl() {
+		
+	}
+
+}

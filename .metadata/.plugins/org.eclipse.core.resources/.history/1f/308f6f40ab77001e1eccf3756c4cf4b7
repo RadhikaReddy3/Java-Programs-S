@@ -1,0 +1,14 @@
+package com.Tuesday;
+
+public class PTest {
+
+	public static void main(String[] args) {
+		Mobile m = new Mobile(1,"Airtel",2389424244l);
+		Mobile j = new Mobile(2,"jio",8458333849l);
+		
+		Mobile[] n = {m,j};
+	 Person p = new Person(1, "Radhika", 345.344, new Adhar(123,"Hyd",134245434l),n);
+
+	}
+
+}

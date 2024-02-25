@@ -1,0 +1,17 @@
+package com.cisco;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JDBCtemplatestd {
+	
+	@Autowired
+	private JdbcTemplate ju;
+	
+	public void save(Student se) {
+		ju.update("insert into springjdbcstd.student values(?,?,?,?)", se.getSid(),se.getSname(),se.getSage(),se.getSmarks());
+	}
+
+}

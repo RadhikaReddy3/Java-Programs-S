@@ -1,0 +1,15 @@
+package com.cisco;
+
+public class Stest {
+
+	public static void main(String[] args) {
+		 
+		Student s = new Student(1,"ram",75.5);
+		System.out.println(s.getSid());
+		System.out.println(s.getSname());
+		System.out.println(s.getSage());
+		
+
+	}
+
+}

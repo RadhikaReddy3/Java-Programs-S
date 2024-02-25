@@ -1,0 +1,14 @@
+package com.google;
+
+public class Student {
+	int sid;
+	String sname;
+	int smarks;
+	char sgender;
+	boolean sresult;
+	String scourse;
+	int sage;
+	String sschl;
+	
+
+}

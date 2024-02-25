@@ -1,0 +1,41 @@
+package com.controller;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.pojo.*;
+
+public class UnitTest {
+	
+	
+	public static void savedata(Employee p) {
+		SessionFactory sf = GetSessionFactory.con();
+		Session s = sf.openSession();
+	    Transaction t=	s.beginTransaction();
+	    
+	    
+	    
+	    s.save(p);
+	    
+	    
+	    t.commit();
+		s.close();
+		sf.close();
+	}
+
+	public static void main(String[] args) {
+		 
+		UnitTest a = new UnitTest();
+		
+		Employee e = new Employee();
+		e.setEname("Ram");
+		e.setEsal(56.7);
+		e.setEloc("Hyd");
+		e.setEdes("se");
+		
+		a.savedata(e);
+
+	}
+
+}

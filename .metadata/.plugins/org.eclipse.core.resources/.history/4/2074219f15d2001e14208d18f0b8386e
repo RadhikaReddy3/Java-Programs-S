@@ -1,0 +1,19 @@
+package com.cisco;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentService {
+
+	@Autowired
+    private JDBCtemplate jtd;
+    public void save(Student se) {
+		System.out.println("We are in Controller save started");
+		jtd.save(se);
+		System.out.println("We are in Controller save completed");
+	}
+    
+}

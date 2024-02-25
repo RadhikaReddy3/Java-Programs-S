@@ -1,0 +1,85 @@
+package com.controller;
+import com.pojo.Patient;
+import com.pojo.Adhar;
+import com.pojo.ContactDetails;
+import com.pojo.Doctor;
+import com.pojo.FoodandBev;
+import com.pojo.Lab;
+public class SetterInjection {
+
+	public static void main(String[] args) {
+		 Patient p = new Patient();
+		 p.setPid(1);
+		 p.setPname("siva");
+		 p.setPage(23);
+		 
+		 Adhar a = new Adhar();
+		 a.setAid(1);
+		 a.setAnum("234asd");
+		 a.setAloc("scd");
+		 p.setAd(a);
+		 
+		 ContactDetails c = new ContactDetails();
+		 c.setCdid(1);
+		 c.setCname("Lokesh");
+		 c.setCphone(56456);
+		 
+		 ContactDetails c1 = new ContactDetails();
+		 c1.setCdid(2);
+		 c1.setCname("Rajesh");
+		 c1.setCphone(76786);
+		 
+		 ContactDetails[] co= {c,c1};
+		 p.setCd(co);
+		 
+		 Doctor d = new Doctor();
+		 d.setDid(1);
+		 d.setDname("rose");
+		 d.setDfee(3000);
+		 
+		 Doctor d1 = new Doctor();
+		 d1.setDid(2);
+		 d1.setDname("sravani");
+		 d1.setDfee(2000);
+		 
+		 Doctor d2 = new Doctor();
+		 d2.setDid(3);
+		 d2.setDname("sampath");
+		 d2.setDfee(5000);
+		 
+		 Doctor doc[] = {d,d1,d2};
+		 p.setDoc(doc);
+		 
+		 Lab l = new Lab();
+		 l.setLid(1);
+		 l.setLtestname("covid");
+		 l.setLtestfee(800);
+		 
+		 
+		 Lab l1 = new Lab();
+		 l1.setLid(2);
+		 l1.setLtestname("sugar");
+		 l1.setLtestfee(150);
+		 
+		 Lab l2 = new Lab();
+		 l2.setLid(3);
+		 l2.setLtestname("bp");
+		 l2.setLtestfee(50);
+		 
+		 Lab la[] = {l,l1,l2};
+		 
+		 p.setLb(la);
+		 System.out.println("Person Details"+"\n");
+		 System.out.println(p.getPid()+"  "+p.getPname()+"  "+p.getPage());
+		 System.out.println("\n"+"Person Adhar Details"+"\n");
+		 System.out.println(p.getAd().getAid()+"  "+p.getAd().getAnum()+"  "+p.getAd().getAloc());
+		 
+		 ContactDetails []cde= p.getCd();
+		 for(int i=0;i<cde.length;i++) {
+			 System.out.println(cde[i].getCdid()+"  "+cde[i].getCname()+"  "+cde[i].getCphone());
+		 }
+		 
+
+	}
+
+}

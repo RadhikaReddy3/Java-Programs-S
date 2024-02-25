@@ -1,0 +1,31 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	@Autowired
+	private OurConfiguration con;
+	
+	public  void savedata(StudentPojo std) {
+		System.out.println("StudentDao save started");
+		System.out.println("Database code starts here");
+	
+		DataSource ds =con.datasource();
+		try {
+			Connection con = ds.getConnection();
+			System.out.println(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("StudentDao save completed");
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.google;
+
+public class Student {
+	int sid;
+	String sname;
+	float smarks;
+	char sgender;
+	boolean sresult;
+	String scourse = "Java Fullstack with cloud";
+	double sage;
+	String sschl = "GEMS";
+	
+	public static void main(String[] args) {
+		 
+		Student s = new Student();
+		System.out.println(s.sid);
+		System.out.println(s.sname);
+		System.out.println(s.smarks);
+		System.out.println(s.sgender);
+		System.out.println(s.sresult);
+		System.out.println(s.scourse);
+		System.out.println(s.sage);
+		System.out.println(s.sschl);
+		
+	}
+	
+
+}

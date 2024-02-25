@@ -1,0 +1,33 @@
+package com.controller;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.pojo.One;
+import com.pojo.Two;
+
+public class CompositeTest {
+
+	public static void savemethod() {
+		SessionFactory sf = GetSessionFactory.con();
+		Session s =sf.openSession();
+		Transaction t = s.beginTransaction();
+		One p = new One();
+		p.setOloc("Hyd");
+		p.setOname("Manju");
+		Two q = new Two();
+		q.setTname("Siva");
+		q.setTloc("SCD");
+		p.setTo(q);
+		s.save(p);
+		t.commit();
+		s.close();
+		
+	}
+	public static void main(String[] args) {
+		 
+
+	}
+
+}

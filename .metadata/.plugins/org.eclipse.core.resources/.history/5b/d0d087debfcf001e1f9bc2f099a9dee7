@@ -1,0 +1,33 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@ComponentScan("com.pojo")
+public class OurConf {
+	
+	@Bean
+	public ArrayList getAll() {
+		
+		ArrayList k = new ArrayList();
+		k.add("siva");
+		k.add("ram");
+		
+		return k;
+	}
+	
+	@Bean
+	public String getdata() {
+		
+		String k = new String("manju");
+		 
+		
+		return k;
+	}
+
+}

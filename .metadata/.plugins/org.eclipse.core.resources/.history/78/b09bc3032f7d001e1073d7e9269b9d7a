@@ -1,0 +1,89 @@
+package com.controller;
+import com.slokam.*;
+public class SetterInjection {
+
+	public static void main(String[] args) {
+	
+		
+		 
+		
+		Order o = new Order();
+		o.setOid(1);
+		o.setOloc("hyd");
+		
+
+		Productdet p1= new Productdet();
+		p1.setPid(1);
+		p1.setPname("nuts");
+		p1.setPprice(34.0);
+		p1.setPvat(12.0);
+		p1.setPgst(5.0);
+		Productdet p2= new Productdet();
+		p2.setPid(2);
+		p2.setPname("choc");
+		p2.setPprice(56.0);
+		p2.setPvat(12.0);
+		p2.setPgst(5.0);
+		Productdet[]pro= {p1,p2};
+        o.setPro(pro);
+        
+        vendordata v = new vendordata();
+        v.setVid(1);
+        v.setVname("nestle");
+        v.setVloc("Uk");
+        v.setVprice("234");
+        v.setVtan("556AA");
+        v.setVpan("645DFGD");
+        
+        vendordata v1 = new vendordata();
+        v1.setVid(2);
+        v1.setVname("reliance");
+        v1.setVloc("Ind");
+        v1.setVprice("210");
+        v1.setVtan("556Aa");
+        v1.setVpan("645DFsD");
+        
+        vendordata v2 = new vendordata();
+        v2.setVid(2);
+        v2.setVname("reliance");
+        v2.setVloc("Ind");
+        v2.setVprice("210");
+        v2.setVtan("556Aa");
+        v2.setVpan("645DFsD");
+        
+        
+        vendordata [] ven= {v,v1,v2};
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		System.out.println("order data"+"\n");
+		System.out.println(o.getOid()+" "+o.getOloc()+"\n");
+		System.out.println("Customerinfo"+"\n");
+		Customer ch = o.getCu();
+		System.out.println(ch.getCid()+" "+ch.getCname()+" "+ch.getCphno()+" "+ch.getCloc()+" "+ch.getCtrans()+"\n");
+	    System.out.println("Customer Order Product");
+	    Productdet[] m= o.getPro();
+	    for(int i=0;i<=m.length-1;i++) {
+	    	System.out.println(m[i].getPid()+" "+m[i].getPname()+" "+m[i].getPprice()+" "+m[i].getPvat()+" "+m[i].getPgst()+" "+m[i].getPdis()+"\n");
+	    	vendordata[] vd = m[i].getVen();
+	    	
+	    	System.out.println("Vendor data");
+	    	for(int h=0;h<=vd.length-1;h++) {
+	    		System.out.println(vd[i].getVid()+" "+vd[i].getVname()+" "+vd[i].getVloc()+" "+vd[i].getVprice()+" "+vd[i].getVpan()+" "+vd[i].getVtan());
+	    	}
+	    }
+		 
+		  
+	}
+
+}

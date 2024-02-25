@@ -1,0 +1,18 @@
+package com.pojo;
+
+import javax.persistence.Entity;
+
+@Entity
+public class TeamLead {
+	 
+	private Developer dev;
+	private Manager m;
+	public void doWork() {
+		
+		System.out.println("TeamLead Work started");
+		dev.doWork();
+		System.out.println("TeamLead Work completed");
+		
+	}
+	 
+}

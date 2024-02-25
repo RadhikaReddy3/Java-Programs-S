@@ -1,0 +1,23 @@
+package com.lazy;
+
+public class STonl {
+	
+	private static STonLazyLoad sl = null;
+	
+	private STonl() {
+		
+	}
+	
+	public static STonLazyLoad getsingletonObj() {
+		
+		if(sl==null) {
+			
+			System.out.println("I am inside if");
+			sl = new STonLazyLoad();
+			return sl;
+		}
+		else return sl;
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.slokam;
+
+import java.util.Scanner;
+
+public class stu {
+
+	public static void main(String[] args) {
+	 

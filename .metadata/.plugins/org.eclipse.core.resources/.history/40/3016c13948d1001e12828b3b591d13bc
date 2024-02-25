@@ -1,0 +1,10 @@
+package com.cisco;
+
+public class StudentEntity {
+	
+	private Integer sid;
+	private String sname;
+	private double smarks;
+	private long sphone;
+
+}

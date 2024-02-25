@@ -1,0 +1,27 @@
+package com.cisco;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentService {
+
+	@Autowired
+    private JDBCtemplatestd jtd;
+    public void save(Student se) {
+		System.out.println("We are in Student Service save started");
+		System.out.println("We are going to JDBCtemplatestd from Student servixe");
+		jtd.save(se);
+		System.out.println("We are in Student Service save completed");
+	}
+    
+    public void update(int sid, String sname, int sage) {
+		System.out.println("We are in Student Service save started");
+		System.out.println("We are going to JDBCtemplatestd from Student servixe");
+		 jtd.update(sid, sname, sage);
+		System.out.println("We are in Student Service save completed");
+	}
+    
+}

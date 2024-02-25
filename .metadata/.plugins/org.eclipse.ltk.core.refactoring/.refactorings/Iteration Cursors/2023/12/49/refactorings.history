@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Enumeration.Vector&apos; to &apos;VectorIterate&apos;&#x0D;&#x0A;- Original project: &apos;Iteration Cursors&apos;&#x0D;&#x0A;- Original element: &apos;Enumeration.Vector&apos;&#x0D;&#x0A;- Renamed element: &apos;Enumeration.VectorIterate&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Vector&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Enumeration{Vector.java[Vector" matchStrategy="1" name="VectorIterate" qualified="false" references="true" similarDeclarations="false" stamp="1701773850702" textual="false" version="1.0"/>
+</session>

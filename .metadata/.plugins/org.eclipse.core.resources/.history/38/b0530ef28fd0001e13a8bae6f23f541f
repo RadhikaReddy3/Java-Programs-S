@@ -1,0 +1,166 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	@Autowired
+	private DataSource ds;
+	//private OurConfiguration con;
+	
+	
+	public  void savedata(StudentPojo std) {
+		System.out.println("StudentDao save started");
+		System.out.println("Database code starts here");
+	
+		//DataSource ds =con.datasource();
+		try {
+			Connection con = ds.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement("insert into springjdbc.stdpojo values(?,?,?,?)");
+			ps.setInt(1, std.getSid());
+			ps.setString(2, std.getSname());
+			ps.setDouble(3, std.getSmarks());
+			ps.setInt(4, std.getSage());
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Inserted:"+row);
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		System.out.println("StudentDao save completed");
+	}
+	
+	public void updatedata(int sid, String sname, double smarks) {
+		
+		System.out.println("StudentDao Update started");
+		System.out.println("Database code starts here");
+	
+		DataSource ds =con.datasource();
+		try {
+			Connection con = ds.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement("update springjdbc.stdpojo set sname =?,smarks =? where(sid =?)");
+			 
+			ps.setString(1, sname);
+			ps.setDouble(2,smarks);
+			ps.setInt(3, sid);
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Updated:"+row);
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		System.out.println("StudentDao Update completed");
+	}
+
+public void deletedata(int sid) {
+		
+		System.out.println("StudentDao Delete started");
+		System.out.println("Database code starts here");
+	
+		DataSource ds =con.datasource();
+		try {
+			Connection con = ds.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement("delete from springjdbc.stdpojo where sid=?");
+			 
+			ps.setInt(1, sid);
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Deleted:"+row);
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		System.out.println("StudentDao Delete completed");
+	}
+
+public void getById(int sid) {
+	
+	System.out.println("Retreving StudentDetails by Id started");
+	System.out.println("Database code starts here");
+
+	//DataSource ds =con.datasource();
+	try {
+		Connection con = ds.getConnection();
+		System.out.println(con);
+		PreparedStatement ps =con.prepareStatement("select* from springjdbc.stdpojo where sid=?");
+		 
+		ps.setInt(1, sid);
+		
+	 ResultSet rs =ps.executeQuery();
+	System.out.println("Rows retrived:"+rs);
+	
+	while(rs.next()) {
+		int stdid=rs.getInt(sid);
+		String stdname=rs.getString("sname");
+		Double stdmarks=rs.getDouble("smarks");
+		int stdage = rs.getInt("sage");
+		
+		System.out.println("StudentID: "+stdid);
+		System.out.println("StudentName: "+stdname);
+		System.out.println("StudentMarks: "+stdmarks);
+		System.out.println("StudentAge: "+stdage);
+	}
+	} catch (SQLException e) {
+		 
+		e.printStackTrace();
+	}
+	System.out.println("Retreving StudentDetails by Id completed");
+}
+
+public  ArrayList<StudentPojo>getAll() {
+	
+	System.out.println("Retreving StudentDetails started");
+	System.out.println("Database code starts here");
+
+	//DataSource ds =con.datasource();
+	ArrayList<StudentPojo> k = new ArrayList<>();
+	try {
+		Connection con = ds.getConnection();
+		System.out.println(con);
+		PreparedStatement ps =con.prepareStatement("select* from springjdbc.stdpojo ");
+		 
+		
+	 ResultSet rs =ps.executeQuery();
+	System.out.println("Rows retrived:"+rs);
+	
+	 
+	
+	while(rs.next()) {
+		  StudentPojo st = new StudentPojo();
+		  st.setSid(rs.getInt("sid"));
+		  st.setSname(rs.getString("sname"));
+		  st.setSmarks(rs.getDouble("smarks"));
+		  st.setSage(rs.getInt("sage"));
+		  k.add(st);
+		  System.out.println(st);
+		  System.out.println("------Next Student Details---------");
+		  
+		 
+	}
+	} catch (SQLException e) {
+		 
+		e.printStackTrace();
+	}
+	 
+	System.out.println("Retreving StudentDetails  completed");
+	return k;
+	
+	
+	
+}
+
+}

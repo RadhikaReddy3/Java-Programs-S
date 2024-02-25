@@ -1,0 +1,19 @@
+package com.controller;
+import com.pojo.Manager;
+
+import com.pojo.TeamLead;
+import com.pojo.Developer;
+public class Test {
+	
+	public static void main1(String[] args) {
+		
+	    Developer d = new Developer();
+		TeamLead t = new TeamLead(); 
+		Manager m = new Manager();
+		
+		Class p=t.getClass();
+		
+		m.doWork();
+
+}
+}

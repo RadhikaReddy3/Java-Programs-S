@@ -1,0 +1,40 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	@Autowired
+	private OurConfiguration con;
+	
+	public  void savedata(StudentPojo std) {
+		System.out.println("StudentDao save started");
+		System.out.println("Database code starts here");
+	
+		DataSource ds =con.datasource();
+		try {
+			Connection con = ds.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement("insert into springjdbc.stdpojo values(?,?,?,?)");
+			ps.setInt(1, std.getSid());
+			ps.setString(2, std.getSname());
+			ps.setDouble(3, std.getSmarks());
+			ps.setInt(4, std.getSage());
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Inserted:"+row);
+		} catch (SQLException e) {
+			 
+			e.printStackTrace();
+		}
+		System.out.println("StudentDao save completed");
+	}
+
+}

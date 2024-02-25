@@ -1,0 +1,19 @@
+package com.lazy;
+
+public class Test {
+
+	public static void main(String[] args) {
+		 
+		STonl s1 =STonl.getsingletonObj();
+		STonl s2 =STonl.getsingletonObj();
+		STonl s3 =STonl.getsingletonObj();
+		STonl s4 =STonl.getsingletonObj();
+		
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		System.out.println(s4);
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	
+ 
+	@Autowired
+	 private DataSource dso;
+	
+	public void save(StudentEntity se) {
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		
+		try {
+			Connection con=dso.getConnection();
+			con.prepareStatement("insert into springjdbc1.stdentity values(?,?,?,?)");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We are in Controller save completed");
+	}
+
+}

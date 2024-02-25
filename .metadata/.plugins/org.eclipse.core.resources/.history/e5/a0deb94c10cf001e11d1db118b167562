@@ -1,0 +1,24 @@
+package com.controller;
+import com.pojo.Manager;
+
+import com.pojo.TeamLead;
+
+import java.lang.reflect.Field;
+
+import com.pojo.Developer;
+public class Test {
+	
+	public static void main(String[] args) {
+		
+	    Developer d = new Developer();
+		TeamLead t = new TeamLead(); 
+		Manager m = new Manager();
+		
+		Class p=t.getClass();
+		Field[] k =p.getDeclaredFields();
+		for(Field l :k) {
+		System.out.println(l.getName());
+		}
+
+}
+}

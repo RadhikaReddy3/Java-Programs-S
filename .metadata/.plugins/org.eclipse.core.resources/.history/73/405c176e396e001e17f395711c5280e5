@@ -1,0 +1,22 @@
+package com.Emp;
+
+public class Employee {
+	
+	private int eid = 1;
+	private String sname = "radhika";
+	private double esal = 65.67;
+	
+	public void setEid(int id) 
+	{
+		
+		this.eid=id;
+		
+	}
+	public int getEid() 
+	{
+		return eid;
+		
+	}
+	
+
+}

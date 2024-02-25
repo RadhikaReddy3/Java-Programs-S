@@ -1,0 +1,33 @@
+package com.controller;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.pojo.Product;
+import com.pojo.Vendor;
+ 
+
+public class CompositeTest {
+
+	public static void savemethod() {
+		SessionFactory sf = GetSessionFactory.con();
+		Session s =sf.openSession();
+		Transaction t = s.beginTransaction();
+		Product h = new Product();
+		h.setPname("TV");
+		h.setPprice(56.7);
+		h.setPloc("Hyd");
+		Vendor t = new Vendor();
+		
+		s.save(h);
+		t.commit();
+		s.close();
+		
+	}
+	public static void main(String[] args) {
+		 
+
+	}
+
+}

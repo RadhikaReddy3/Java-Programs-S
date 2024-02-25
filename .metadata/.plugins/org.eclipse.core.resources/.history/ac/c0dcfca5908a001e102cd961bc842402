@@ -1,0 +1,11 @@
+package Different_Methods_Usage;
+
+public class ETest {
+
+	public static void main(String[] args) {
+		 
+		Employee t = new Employee(1,"siva",123.333,"se");
+		System.out.println(t.getEid()+" "+t.getEname()+" "+t.getEsal()+" "+t.getEdes());
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.cisco;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	
+ 
+	 
+	
+	public void save(StudentEntity se) {
+		System.out.println("We are in Controller save started");
+		 System.out.println("Database code starts here");
+		 
+		System.out.println("We are in Controller save completed");
+	}
+
+}

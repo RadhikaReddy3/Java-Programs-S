@@ -1,0 +1,9 @@
+package com.cisco;
+
+public class STon {
+	
+	private STon() {
+		
+	}
+
+}

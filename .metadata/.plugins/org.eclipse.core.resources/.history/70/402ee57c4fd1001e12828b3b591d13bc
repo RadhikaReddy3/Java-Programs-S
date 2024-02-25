@@ -1,0 +1,16 @@
+package com.cisco;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext ap = new AnnotationConfigApplicationContext(OurConf.class);
+		StudentController std= ap.getBean(StudentController.class);
+		std.save(new StudentEntity(3,"ra",97.5,98237892l));
+
+
+	}
+
+}

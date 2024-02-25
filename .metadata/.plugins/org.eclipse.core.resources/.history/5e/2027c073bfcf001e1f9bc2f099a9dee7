@@ -1,0 +1,22 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@ComponentScan("com.pojo")
+public class OurConf {
+	
+	public ArrayList getAll() {
+		
+		ArrayList k = new ArrayList();
+		k.add("siva");
+		k.add("ram");
+		
+		return k;
+	}
+
+}

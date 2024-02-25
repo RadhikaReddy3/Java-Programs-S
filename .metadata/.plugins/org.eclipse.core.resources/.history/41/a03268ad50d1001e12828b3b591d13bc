@@ -1,0 +1,67 @@
+package com.cisco;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDao {
+	
+ 
+	@Autowired
+	 private DataSource dso;
+	
+	public void save(StudentEntity se) {
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		try {
+			Connection con=dso.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement("insert into springjdbc1.stdentity values(?,?,?,?)");
+			ps.setInt(1, se.getSid());
+			ps.setString(2, se.getSname());
+			ps.setDouble(3, se.getSmarks());
+			ps.setLong(4, se.getSphone());
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Inserted:"+row);
+			
+		 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We are in Controller save completed");
+	}
+	public void update(int sid, long sphone, String sname) {
+		System.out.println("We are in Controller save started");
+		System.out.println("Database code starts here");
+		System.out.println(dso);
+		try {
+			Connection con=dso.getConnection();
+			System.out.println(con);
+			PreparedStatement ps =con.prepareStatement(" Update springjdbc1.stdentity set sname =?,sphone =? where sid = ?");
+			ps.setInt(1, sid);
+			ps.setString(2,sname);
+			ps.setLong(3,sphone);
+			 
+			
+		int row = ps.executeUpdate();
+		System.out.println("Rows Inserted:"+row);
+			
+		 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We are in Controller save completed");
+	}
+
+	 
+}

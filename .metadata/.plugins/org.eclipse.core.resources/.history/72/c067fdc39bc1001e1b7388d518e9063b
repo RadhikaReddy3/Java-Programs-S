@@ -1,0 +1,41 @@
+package com.controller;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.pojo.Passport;
+import com.pojo.Person;
+
+public class OTO {
+	
+	public static void savedata(Passport p) {
+		SessionFactory sf = GetSessionFactory.con();
+		Session s =sf.openSession();
+		Transaction t = s.beginTransaction();
+		
+		s.save(p);
+		t.commit();
+		s.close();
+		 
+		
+	}
+
+	public static void main(String[] args) {
+		 
+		OTO l = new OTO();
+		Passport pt = new Passport();
+		pt.setPpid(1);
+		pt.setPnum("sder123");
+		pt.setPexp("2025");
+		
+		Person k = new Person();
+		 
+		k.setPname("klin");
+		k.setPage(55);
+		k.setPqual("MCA");
+		pt.setPers(k);
+		l.savedata(pt);
+	}
+
+}

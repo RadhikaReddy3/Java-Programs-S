@@ -1,0 +1,5 @@
+package NonPrimitiveDatatypes;
+
+public class Employee extends Dept {
+
+}

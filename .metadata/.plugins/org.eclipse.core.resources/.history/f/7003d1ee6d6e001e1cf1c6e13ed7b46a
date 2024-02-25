@@ -1,0 +1,18 @@
+package com.Emp;
+
+public class EmpTest {
+
+	public static void main(String[] args) {
+		 
+		Employee e = new Employee();
+		//e.eid;
+		 
+		e.setEid(12);
+		System.out.println(e.getEid());
+		System.out.println(e.getEname()); 
+		System.out.println(e.getEsal());
+		 
+
+	}
+
+}

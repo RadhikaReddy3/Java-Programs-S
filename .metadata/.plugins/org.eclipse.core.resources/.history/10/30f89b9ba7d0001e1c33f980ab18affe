@@ -1,0 +1,15 @@
+package com.cisco;
+
+public class STon {
+	
+	private static STon st = new STon();
+	
+	private STon() {
+		
+	}
+	
+	public static STon getsingletonobject() {
+		return st;
+	}
+
+}

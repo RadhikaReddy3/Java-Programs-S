@@ -1,0 +1,28 @@
+package com.Tuesday;
+
+public class PTest {
+
+	public static void main(String[] args) {
+		Mobile m = new Mobile(1,"Airtel",2389424244l);
+		
+		Mobile j = new Mobile(2,"jio",8458333849l);
+		
+		Mobile[] n = {m,j};
+		
+	    Person p = new Person(1, "Radhika", 345.344, new Adhar(123,"Hyd",134245434L),n);
+	    
+	    
+	    System.out.println(p+"\n");
+	    
+	    System.out.println(p.getPid()+"---"+p.getPname()+"---"+p.getPsal()+"---"+p.getAd().getAid()+"---"+p.getAd().getAno()+"---"+p.getAd().getAloc());
+	 
+	    Mobile[] h = p.getMob();
+	    System.out.println("\n\n");
+	   for(int i=0;i<h.length;i++) {
+		   System.out.println("--Mobile Details--");
+		   
+		 System.out.println(h[i].getMid()+"---"+h[i].getMnum()+"---"+h[i].getMsim()+"\n");
+	 }
+	}
+
+}

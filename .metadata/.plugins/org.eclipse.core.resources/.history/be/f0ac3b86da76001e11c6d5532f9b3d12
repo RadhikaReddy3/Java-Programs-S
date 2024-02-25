@@ -1,0 +1,31 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class AADHAR {
+	
+	public AADHAR(int id,long no,String loc){
+		System.out.println("AADHAR CARD THREE ARGUMENTED CONSTRUCTOR");
+		
+	}
+	private int aid;
+	private long ano;
+	private String aloc;
+	public int getAid() {
+		return aid;
+	}
+	public void setAid(int aid) {
+		this.aid = aid;
+	}
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	public int getAloc() {
+		return aloc;
+	}
+	public void setAloc(int aloc) {
+		this.aloc = aloc;
+	}
+
+}

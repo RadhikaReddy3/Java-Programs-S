@@ -1,0 +1,26 @@
+package com.RelationslikeAADHARandMOBILE;
+
+public class AADHAR {
+	private int aid;
+	private int ano;
+	private int aloc;
+	public int getAid() {
+		return aid;
+	}
+	public void setAid(int aid) {
+		this.aid = aid;
+	}
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	public int getAloc() {
+		return aloc;
+	}
+	public void setAloc(int aloc) {
+		this.aloc = aloc;
+	}
+
+}
